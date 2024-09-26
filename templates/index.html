@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KMeans Clustering Algorithm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select, .form-group button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>KMeans Clustering Algorithm</h1>
+        <div class="form-group">
+            <label for="num-clusters">Number of Clusters (k)</label>
+            <input type="number" id="num-clusters" name="num-clusters" min="1">
+        </div>
+        <div class="form-group">
+            <label for="init-method">Initialization Method</label>
+            <select id="init-method" name="init-method">
+                <option value="random">Random</option>
+                <option value="farthest-first">Farthest First</option>
+                <option value="kmeans++">KMeans++</option>
+                <option value="manual">Manual</option>
+            </select>
+        </div>
+        <div id="scatter-plot" style="width: 100%; height: 400px;"></div>
+    </div>
+    <script>
+        var data = [
+            {
+                x: [1, 2, 3, 4, 5],
+                y: [2, 3, 4, 5, 6],
+                mode: 'markers',
+                type: 'scatter'
+            }
+        ];
+
+        Plotly.newPlot('scatter-plot', data);
+
+        var scatterPlot = document.getElementById('scatter-plot');
+        scatterPlot.on('plotly_click', function(data){
+            var point = data.points[0];
+            var x = point.x;
+            var y = point.y;
+            processPoint(x, y);
+        });
+
+        function processPoint(x, y) {
+            alert('You clicked on point (' + x + ', ' + y + ')');
+            // TODO: Add your data processing logic here
+        }
+    </script>
+</body>
+</html>

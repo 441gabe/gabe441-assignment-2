@@ -38,7 +38,9 @@
             <label for="init-method">Initialization Method</label>
             <select id="init-method" name="init-method">
                 <option value="random">Random</option>
+                <option value="farthest-first">Farthest First</option>
                 <option value="kmeans++">KMeans++</option>
+                <option value="manual">Manual</option>
             </select>
         </div>
         <div class="form-group">
@@ -46,6 +48,10 @@
             <button id="run-to-convergence">Run to Convergence</button>
             <button id="generate-dataset">Generate New Dataset</button>
             <button id="reset-algorithm">Reset Algorithm</button>
+        </div>
+        <div class="form-group"></div>
+            <label for="kmeans-gif">KMeans Algorithm Visualization</label>
+            <img id="kmeans-gif" src="path/to/your/local/folder/kmeans.gif" alt="KMeans Algorithm Visualization" style="width: 100%; height: auto;">
         </div>
     </div>
 </body>
