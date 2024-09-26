@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KMeans Clustering Algorithm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select, .form-group button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>KMeans Clustering Algorithm</h1>
+        <div class="form-group">
+            <label for="num-clusters">Number of Clusters (k)</label>
+            <input type="number" id="num-clusters" name="num-clusters" min="1">
+        </div>
+        <div class="form-group">
+            <label for="init-method">Initialization Method</label>
+            <select id="init-method" name="init-method">
+                <option value="random">Random</option>
+                <option value="kmeans++">KMeans++</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <button id="step-through">Step through KMeans</button>
+            <button id="run-to-convergence">Run to Convergence</button>
+            <button id="generate-dataset">Generate New Dataset</button>
+            <button id="reset-algorithm">Reset Algorithm</button>
+        </div>
+    </div>
+</body>
+</html>
